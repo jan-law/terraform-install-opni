@@ -21,9 +21,14 @@ Warning: This method of installation is not supported at the time of writing. I'
   }
 ```
 5. Paste your `values.yaml` file from step 2 into the `opni` directory
-6. Run `terraform init`, `terraform plan` to see the proposed changes to your cluster.
-7. Run `terraform apply`. This will install `cert-manager`, the Opni CRDs and Opni. It may take a few minutes to complete.
-8. Follow the rest of the documentation to install Opni backends and other features: https://opni.io/installation/opni/
+6. Add the Opni Helm repo
+```
+helm repo add opni https://raw.githubusercontent.com/rancher/opni/charts-repo
+helm repo update
+```
+8. Run `terraform init`, `terraform plan` to see the proposed changes to your cluster.
+9. Run `terraform apply`. This will install `cert-manager`, the Opni CRDs and Opni. It may take a few minutes to complete.
+10. Follow the rest of the documentation to install Opni backends and other features: https://opni.io/installation/opni/
 
 To upgrade Opni, change the "version" number of your upstream opni installation, eg "0.9.2" to "0.10.0" and run `terraform apply`
 
