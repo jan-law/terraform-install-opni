@@ -1,0 +1,6 @@
+# your opni gateway address that is accessible to all agents
+address: 
+# copy these values from the Opni admin UI > agent > manual installation section
+pin: 
+token: 
+friendlyName: 
