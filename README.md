@@ -12,7 +12,7 @@ Warning: This method of installation is not supported at the time of writing. I'
 
 #### Install Opni
 1. Read the Opni installation guide for "Installation with Helm" > "Chart Configuration" section. Create your own `values.yaml` and fill out the fields for the Opni `gateway`. You do not need the `opni-agent` or `opni-prometheus-crd` fields. https://opni.io/installation/opni/
-2. Clone this repo and go to the upstream opni installation directory: `cd opni`
+2. Clone this repo and go to the upstream opni installation directory: `cd terraform-install-opni/opni`
 3. Set the `config_path` to your upstream cluster kubeconfig path, eg `~/.kube/config`. You will also need to set the kubeconfig in your terminal: ```export KUBECONFIG=~/.kube/config```
 ```
 # terraform-install-opni/opni/main.tf
@@ -33,7 +33,7 @@ helm repo update
 To upgrade Opni, change the "version" number of your upstream opni installation, eg "0.9.2" to "0.10.0" and run `terraform apply`
 
 #### Install Opni Agent
-1. Go to the `opni-agent` directory in this repository
+1. Go to the `terraform-install-opni/opni-agent` directory in this repository: `cd ../opni-agent`
 2. Fill out the `values.yaml` file in this repo for the agent configuration. Refer to the Opni documentation for more info.
 3. Using the same steps as above, set the `config_path` to your *downstream* cluster kubeconfig path, eg
 ```export KUBECONFIG=~/.kube/downstream-config```
